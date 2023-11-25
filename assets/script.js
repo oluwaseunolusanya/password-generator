@@ -96,28 +96,12 @@ function getPasswordOptions() {
     passwordLength = parseInt(prompt("How long do you want your password to be?(Password cannot be less than 8 characters or more than 128 characters.)"))
   }
 
-  //
-
-  
-  
-  let selectedPasswordCharacterTypes = {
-    lowercase: 0,
-    uppercase: 0,
-    numeric: 0,
-    specialCharacter: 0
-  };
-  
-  let passwordCharacterTypes = [lowercase, uppercase, numeric, specialCharacters];
-
-  let validCharacterTypeCount = 0
-
-  for (characterType in passwordCharacterTypes){
-    validCharacterTypeCount += selectedPasswordCharacterTypes.characterType;
-    while (selectedPasswordCharacterTypes.characterType == 0){
-
-    }
-  };
-
+  // Prompt user for type of each character in the password
+  let passwordCharacters = []
+  for (let i = 0; i < passwordLength; i++){
+    let position = i + 1;
+    passwordCharacters.push(prompt(`What character do you want in position ${position} of your password. Type l for lowercase, u for uppercase, n for numeric or s for special character.`));
+  }
 }
 
 // Function for getting a random element from an array
