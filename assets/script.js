@@ -90,17 +90,32 @@ let upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  // Get password length from user.
+  // Get password length from user and validate it to be atleast 8 and not more than 128 characters long.
   let passwordLength = 0;
   while ((passwordLength < 8) || (passwordLength > 128)) {
     passwordLength = parseInt(prompt("How long do you want your password to be?(Password cannot be less than 8 characters or more than 128 characters.)"))
   }
 
-  // Prompt user for type of each character in the password
+  // Prompt user for type of each character in the password and validate correct type is entered.
   let passwordCharacters = []
   for (let i = 0; i < passwordLength; i++){
     let position = i + 1;
-    passwordCharacters.push(prompt(`What character do you want in position ${position} of your password. Type l for lowercase, u for uppercase, n for numeric or s for special character.`));
+    // Specify valid character type.
+    let characterTypes = ['l','u','n','s'];
+    // Create a variable to store type entered by user.
+    let passwordCharacter = '';
+    // Continue prompting for valid entry until one is entered
+    while (characterTypes.includes(passwordCharacter) == false){
+      passwordCharacter = prompt(`What character do you want in position ${position} of your password. Type l for lowercase, u for uppercase, n for numeric or s for special character.`);
+      // Store each valid entry into an array.
+      if (passwordCharacter == 'l' || passwordCharacter == 'u' || passwordCharacter == 'n' || passwordCharacter == 's'){
+        passwordCharacters.push(passwordCharacter);
+      }
+      else{
+        continue;
+      }
+    }
+    alert(`Here are the character types entered so far [${passwordCharacters}]. (l - lowercase, u - uppercase, n - numeric and s - special character.)`)
   }
 }
 
@@ -120,10 +135,10 @@ let generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  let password = generatePassword();
-  let passwordText = document.querySelector('#password');
+  // let password = generatePassword();
+  // let passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  // passwordText.value = password;
   // getPasswordOptions();  //Testing the getPasswordOptions()
 }
 
