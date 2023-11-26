@@ -17,6 +17,9 @@ N/A
 ## Usage
 Navigate to this https://oluwaseunolusanya.github.io/password-generator/
 
+![screencapture-oluwaseunolusanya-github-io-password-generator-2023-11-26-11_38_08](https://github.com/oluwaseunolusanya/password-generator/assets/26019734/71c3b92b-d9a7-4541-90f4-c20e32156f90)
+
+
 ## Credits
 Oluwaseun Olusanya
 
